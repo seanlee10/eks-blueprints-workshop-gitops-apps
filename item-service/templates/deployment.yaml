@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: item-service
+  namespace: default
+  labels:
+    app: item-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: item-service
+  template:
+    metadata:
+      labels:
+        app: item-service
+    spec:
+      containers:
+      - name: item-service
+        image: {{ .Values.image.uri }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8080
