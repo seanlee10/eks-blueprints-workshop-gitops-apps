@@ -1,0 +1,4 @@
+apiVersion: v2
+name: anne-api
+description: A Helm chart for anne-api
+version: 0.1.0

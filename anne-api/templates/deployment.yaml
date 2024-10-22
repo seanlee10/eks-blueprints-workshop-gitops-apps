@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anne-api
+  namespace: default
+  labels:
+    app: anne-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: anne-api
+  template:
+    metadata:
+      labels:
+        app: anne-api
+    spec:
+      containers:
+      - name: anne-api
+        image: {{ .Values.image.uri }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8080
