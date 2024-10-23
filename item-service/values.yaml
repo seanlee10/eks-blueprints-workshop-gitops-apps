@@ -1,3 +1,3 @@
 image:
   uri: 394017557349.dkr.ecr.us-west-2.amazonaws.com/item-service
-  tag: latest
+  tag: v5
